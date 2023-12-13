@@ -7,7 +7,6 @@ pipeline {
                 script {
                     sh 'chmod +x script.sh'
                     sh './script.sh'
-                    docker info
                 }    
             }
         }
