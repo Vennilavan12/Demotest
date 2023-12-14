@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'agent'
-    }   
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -16,6 +14,7 @@ pipeline {
             }
             steps {
                 script {
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vennilavan12/Demotest.git']])
                     sh 'chmod +x script.sh'
                     sh './script.sh'
                 }    
