@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Hello"
-echo "This is Jenkins"
+echo "This is Jenkins build triggers"
 docker images
 docker info
 docker ps
