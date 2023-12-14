@@ -8,7 +8,7 @@ pipeline {
                 }
             }
         }        
-        stage('Test') {
+        stage('Deploy') {
             agent {
                 label 'agent'
             }
