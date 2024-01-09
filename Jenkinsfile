@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // Authenticate with ECR
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS']]) {
-                        sh "aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${ECR_REPO_URL}"
+                        sh "aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${registry}"
                          sh 'docker push 006095271778.dkr.ecr.us-east-2.amazonaws.com/dev:latest'
                     }
 
